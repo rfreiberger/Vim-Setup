@@ -48,6 +48,10 @@ function copy_vim_files {
   echo "Copying over the plugin files"
   wget -P $HOME/.vim/colors/molokai https://raw.githubusercontent.com/rfreiberger/Vim-Setup/master/.vim/colors/molokai.vim
   echo "Done copying over colors"
+  wget -P $HOME/.vim/autoload/plug.vim https://raw.githubusercontent.com/rfreiberger/Vim-Setup/master/.vim/autoload/plug.vim
+  echo "Done copying over the plug file"
+  echo "Please run the following to install the plugin's"
+  echo "In vim 'PluginInstall'"
 }
 
 check_vim_version
