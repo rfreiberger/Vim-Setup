@@ -1,6 +1,10 @@
 #!/bin/bash
 # Robert Freiberger
 # 10/24/2016
+# This is a script to help setup remote hosts for minimal vim use
+# To run this on a remote host, use the following command
+# $ curl -s https://raw.githubusercontent.com/rfreiberger/Vim-Setup/master/vimsetup.sh | sh
+
 
 function check_vim_dirs {
   if [ -d "$1" ]
