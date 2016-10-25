@@ -36,7 +36,6 @@ function check_vim_version {
     echo "Vim is installed"
   else
     echo "Vim is not installed"
-    if
   fi
 }
 
