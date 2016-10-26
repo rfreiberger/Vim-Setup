@@ -1,4 +1,7 @@
 #!/bin/bash
+# This is a simple script to copy over my vim settings
+
+#!/bin/bash
 # Robert Freiberger
 # 10/24/2016
 # This is a script to help setup remote hosts for minimal vim use
@@ -43,12 +46,12 @@ check_vim_version
 
 function copy_vim_files {
   echo "Copying over the vimrc file"
-  curl -fLo ~/.vimrc https://raw.githubusercontent.com/rfreiberger/Vim-Setup/master/.vimrc
+  wget -P $HOME https://raw.githubusercontent.com/rfreiberger/Vim-Setup/master/.vimrc
   echo "Done copying over vimrc"
   echo "Copying over the plugin files"
-  curl -fLo ~/.vim/colors --create-dirs https://raw.githubusercontent.com/rfreiberger/Vim-Setup/master/.vim/colors/molokai.vim
+  wget -P $HOME/.vim/colors/molokai https://raw.githubusercontent.com/rfreiberger/Vim-Setup/master/.vim/colors/molokai.vim
   echo "Done copying over colors"
-  curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  wget -P $HOME/.vim/autoload/plug.vim https://raw.githubusercontent.com/rfreiberger/Vim-Setup/master/.vim/autoload/plug.vim
   echo "Done copying over the plug file"
   echo "Please run the following to install the plugin's"
   echo "In vim 'PluginInstall'"
@@ -57,7 +60,11 @@ function copy_vim_files {
 check_vim_version
 
 check_vim_dirs $HOME/.vim
+check_vim_dirs $HOME/.vim/autoload
 check_vim_dirs $HOME/.vim/backup
+check_vim_dirs $HOME/.vim/bundle
+check_vim_dirs $HOME/.vim/colors
+check_vim_dirs $HOME/.vim/plugged
 check_vim_dirs $HOME/.vim/swap
 check_vim_dirs $HOME/.vim/undo
 
